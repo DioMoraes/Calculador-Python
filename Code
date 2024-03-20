@@ -1,0 +1,51 @@
+""" Calculadora com while """
+while True:
+    # print('nummmmm')
+    #########
+    numero_1 = input(" digite primeiro digito ")
+    numero_2 = input(" digite segundo digito ")
+    op = input(" qual operação quer fazer? \n[+][-][*][/]] ").lower()
+    
+    numeros_validos = None
+    try:
+        n_1_float =float(numero_1)
+        n_2_float =float(numero_2)
+        numeros_validos = True
+    
+    except:
+        numeros_validos = None
+    if numeros_validos is None:
+        print(" um ou 2 numeros invalidos")
+        continue
+    operadore_permitidos = '+-*/'
+    if op not in operadore_permitidos:
+        print(" operadores invalidos")
+        continue
+    if len(op) != 1:
+        print(" foi digitado mais de um operador")
+        continue    
+  
+        
+    if op == "-":
+        print(f'{n_1_float} - {n_2_float} = ',n_1_float - n_2_float)
+    elif op == "+":
+       
+        print(f'{n_1_float} + {n_2_float} = ', n_1_float + n_2_float)
+    elif op == "*":
+        
+        print(f'{n_1_float} * {n_2_float} = ', n_1_float * n_2_float)
+    elif op == "/":
+        resul = n_1_float / n_2_float
+        print(f'{n_1_float} / {n_2_float} = ', n_1_float / n_2_float)
+    
+    else:
+        print("erro não previsto")
+    
+           
+    sair = input('Quer sair? [s][n]: ').lower().startswith('s')
+    if sair is True:
+        break
+    
+            
+            
+    
